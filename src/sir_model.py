@@ -354,17 +354,16 @@ def SIR_network(graph, source, beta, gamma, step):
 
 
 if __name__ == '__main__':
-    days = range(1, 11)
-    day_num = 10
+    '''
+    parameters can be change
+    '''
+    days = range(1, 16)
+    day_num = 15
     num = 1
     repeat_times = 100
     delta = 0.8
-
-    '''
-    to change
-    '''
-    G = otherindex.generate_graph_USAir()
-    rank_list = get_rank_USAir(10)
+    G = otherindex.generate_graph_Grid()
+    rank_list = get_rank_Grid(10)
 
     rate_0 = np.zeros(day_num)
     rate_05 = np.zeros(day_num)
@@ -396,23 +395,23 @@ if __name__ == '__main__':
 
     for times in range(repeat_times):
         # 高阶
-        r_0 = SIRsim_HO.SIR_sim(G, day_num, p, p_delta, q, rank_list[0])
-        r_05 = SIRsim_HO.SIR_sim(G, day_num, p, p_delta, q, rank_list[1])
-        r_1 = SIRsim_HO.SIR_sim(G, day_num, p, p_delta, q, rank_list[2])
-        r_b = SIRsim_HO.SIR_sim(G, day_num, p, p_delta, q, rank_list[3])
-        r_d = SIRsim_HO.SIR_sim(G, day_num, p, p_delta, q, rank_list[4])
-        r_c = SIRsim_HO.SIR_sim(G, day_num, p, p_delta, q, rank_list[5])
-        r_e = SIRsim_HO.SIR_sim(G, day_num, p, p_delta, q, rank_list[6])
-        r_pr = SIRsim_HO.SIR_sim(G, day_num, p, p_delta, q, rank_list[7])
+        # r_0 = SIRsim_HO.SIR_sim(G, day_num, p, p_delta, q, rank_list[0])
+        # r_05 = SIRsim_HO.SIR_sim(G, day_num, p, p_delta, q, rank_list[1])
+        # r_1 = SIRsim_HO.SIR_sim(G, day_num, p, p_delta, q, rank_list[2])
+        # r_b = SIRsim_HO.SIR_sim(G, day_num, p, p_delta, q, rank_list[3])
+        # r_d = SIRsim_HO.SIR_sim(G, day_num, p, p_delta, q, rank_list[4])
+        # r_c = SIRsim_HO.SIR_sim(G, day_num, p, p_delta, q, rank_list[5])
+        # r_e = SIRsim_HO.SIR_sim(G, day_num, p, p_delta, q, rank_list[6])
+        # r_pr = SIRsim_HO.SIR_sim(G, day_num, p, p_delta, q, rank_list[7])
         # 低阶
-        # r_0 = SIRsim_HO.SIR_sim_lo(G, day_num, p, q, rank_list[0])
-        # r_05 = SIRsim_HO.SIR_sim_lo(G, day_num, p, q, rank_list[1])
-        # r_1 = SIRsim_HO.SIR_sim_lo(G, day_num, p, q, rank_list[2])
-        # r_b = SIRsim_HO.SIR_sim_lo(G, day_num, p, q, rank_list[3])
-        # r_d = SIRsim_HO.SIR_sim_lo(G, day_num, p, q, rank_list[4])
-        # r_c = SIRsim_HO.SIR_sim_lo(G, day_num, p, q, rank_list[5])
-        # r_e = SIRsim_HO.SIR_sim_lo(G, day_num, p, q, rank_list[6])
-        # r_pr = SIRsim_HO.SIR_sim_lo(G, day_num, p, q, rank_list[7])
+        r_0 = SIRsim_HO.SIR_sim_lo(G, day_num, p, q, rank_list[0])
+        r_05 = SIRsim_HO.SIR_sim_lo(G, day_num, p, q, rank_list[1])
+        r_1 = SIRsim_HO.SIR_sim_lo(G, day_num, p, q, rank_list[2])
+        r_b = SIRsim_HO.SIR_sim_lo(G, day_num, p, q, rank_list[3])
+        r_d = SIRsim_HO.SIR_sim_lo(G, day_num, p, q, rank_list[4])
+        r_c = SIRsim_HO.SIR_sim_lo(G, day_num, p, q, rank_list[5])
+        r_e = SIRsim_HO.SIR_sim_lo(G, day_num, p, q, rank_list[6])
+        r_pr = SIRsim_HO.SIR_sim_lo(G, day_num, p, q, rank_list[7])
 
 
         for i in range(day_num):
@@ -435,7 +434,7 @@ if __name__ == '__main__':
         rate_e[i] = int(rate_e[i] / repeat_times) / G.number_of_nodes()
         rate_pr[i] = int(rate_pr[i] / repeat_times) / G.number_of_nodes()
 
-    plt.title('USAir', fontsize=10)
+    plt.title('Grid', fontsize=10)
     plt.xlabel("Time(/day)", fontsize=8)
     plt.ylabel("Rate(%)", fontsize=10)
     plt.tick_params(labelsize=10)
@@ -457,13 +456,13 @@ if __name__ == '__main__':
     # ltext = leg.get_texts()
     # plt.setp(ltext, fontsize=8)
     # plt.grid()
-    print(rate_0)
-    print(rate_05)
-    print(rate_1)
-    print(rate_b)
-    print(rate_d)
-    print(rate_c)
-    print(rate_e)
-    print(rate_pr)
+    # print(rate_0)
+    # print(rate_05)
+    # print(rate_1)
+    # print(rate_b)
+    # print(rate_d)
+    # print(rate_c)
+    # print(rate_e)
+    # print(rate_pr)
     #
     plt.show()
