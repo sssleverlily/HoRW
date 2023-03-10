@@ -1,10 +1,10 @@
 # HoRW
-Higher-order Random Walk
+Higher-order Enhanced Random Walk
 ---
 How to use?
 
-1. Run higher_order_rw.py (under .src)
-2. Run sir_model.py (under .src) 
+1. Run **higher_order_rw.py** (under .src)
+2. Run **sir_model.py** (under .src) 
 
 The network datasets are under .Data folder.
 
