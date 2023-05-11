@@ -1,5 +1,5 @@
 # HoRW
 
-Identifying vital nodes through random walks on higher-order networks
+Identifying vital nodes through augmented random walks on higher-order networks
 
-The code used in this study is available upon request, and final code to be uploaded once the accepted version of the paper appears.
+The authors declare that the code and data supporting the findings of this study will be available after this paper is published.
