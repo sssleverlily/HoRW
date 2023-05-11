@@ -1,4 +1,4 @@
-# HoRW1
+# HoRW
 
 Identifying vital nodes through random walks on higher-order networks
 
